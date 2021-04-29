@@ -1,11 +1,11 @@
 <?php
 
-use App\Models\User;
+use App\Models\taskCategories;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTrialPostsTable extends Migration
+class CreateUserTasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,13 @@ class CreateTrialPostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('trial_posts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('title');
-            $table->text('detail');
+        Schema::create('user_tasks', function (Blueprint $table) {
+            $table->increments('task_id');
+            $table->text('task_title');
+            $table->longText('task_detail');
+            $table->foreign('task_category_id')->references('task_category_id')->on('taskCategories')->onDelete('cascade');
             $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateTrialPostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trial_posts');
+        Schema::dropIfExists('user_tasks');
     }
 }

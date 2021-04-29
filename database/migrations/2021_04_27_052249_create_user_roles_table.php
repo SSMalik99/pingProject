@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTrialPostsTable extends Migration
+class CreateUserRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateTrialPostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('trial_posts', function (Blueprint $table) {
-            $table->increments('post_id');
-            $table->text('title');
-            $table->longText('discription');
+        Schema::create('user_roles', function (Blueprint $table) {
+            $table->increments('role_id');
+            $table->string('role_name');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateTrialPostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trial_posts');
+        Schema::dropIfExists('user_roles');
     }
 }

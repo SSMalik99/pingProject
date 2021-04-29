@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\trialPosts;
+use Illuminate\Support\Facades\Auth;
 
 class trialPost extends Controller
 {
@@ -49,6 +50,7 @@ class trialPost extends Controller
         $newPost=new trialPosts();
         $newPost->title=$request->inputTitle;
         $newPost->detail=$request->inputDetail;
+        $newPost->user_id=Auth::user()->user_id;
         $isInserted=$newPost->save();
         if($isInserted){
             return redirect('posts');

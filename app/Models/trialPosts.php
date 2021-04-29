@@ -10,4 +10,14 @@ class trialPosts extends Model
     use HasFactory;
 
     protected $fillable=['title','detail'];
+    /**
+     * Get the user that owns the trialPosts
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'user_id');
+    }
+
 }

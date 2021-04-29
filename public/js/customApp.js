@@ -6,3 +6,7 @@ function checkData(id,outerId){
         document.getElementById(outerId).innerText='Plese enter atleast three character';
     }
 }
+
+function confirmDelete() {
+    return confirm('Do you want to delete this Pemanently!');
+}
