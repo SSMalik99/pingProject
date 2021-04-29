@@ -14,7 +14,7 @@ class CreateTaskCategoriesTable extends Migration
     public function up()
     {
         Schema::create('task_categories', function (Blueprint $table) {
-            $table->increments('task_category_id');
+            $table->unsignedBigInteger('task_category_id')->autoIncrement()->index();
             $table->string('task_category_name');
             $table->timestamps();
         });

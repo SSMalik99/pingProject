@@ -20,7 +20,9 @@
                                 <a href="posts/editPost/{{ $post->id }}" class="btn btn-sm btn-success">Edit</a>
                                 <a href="posts/deletePost/{{ $post->id }}" class="btn btn-sm btn-danger" onclick="return confirmDelete()">Delete</a>
                                 @else
-                                <div class="alert alert-warning">These are other users Post</div>    
+                                <div class="alert alert-success">
+                                    This is the post by {{ ucwords($post->user->name) }}
+                                </div>    
                                 @endif
                                 
                             </td>

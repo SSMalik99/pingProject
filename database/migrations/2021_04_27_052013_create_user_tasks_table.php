@@ -18,8 +18,8 @@ class CreateUserTasksTable extends Migration
             $table->increments('task_id');
             $table->text('task_title');
             $table->longText('task_detail');
-            $table->foreign('task_category_id')->references('task_category_id')->on('taskCategories')->onDelete('cascade');
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users','user_id')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('task_category_id')->constrained('task_categories','task_category_id')->onUpdate('cascade')->onDelete('cascade');
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

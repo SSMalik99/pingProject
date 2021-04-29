@@ -18,7 +18,7 @@ class CreateTrialPostsTable extends Migration
             $table->increments('id');
             $table->text('title');
             $table->text('detail');
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users','user_id')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
