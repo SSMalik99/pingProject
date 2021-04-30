@@ -10,3 +10,8 @@ function checkData(id,outerId){
 function confirmDelete() {
     return confirm('Do you want to delete this Pemanently!');
 }
+
+function checkDirectTaskInput(){
+    let form=document.getElementById('directAddTaskForm');
+    console.log(form.innerHTML);
+}

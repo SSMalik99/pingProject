@@ -51,8 +51,8 @@
                                     Task
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/currentUserPendingTasks/{{ Auth::user()->user_id }}">My Pending Task</a>
-                                    <a class="dropdown-item" href="/currentUserCompletedTasks/{{ Auth::user()->user_id }}">MY Completed Task</a>
+                                    <a class="dropdown-item" href="/thisUserPendingTasks/{{ Auth::user()->user_id }}">My Pending Task</a>
+                                    <a class="dropdown-item" href="/thisUserCompletedTasks/{{ Auth::user()->user_id }}">MY Completed Task</a>
                                     <hr class="dropdown-divider bg-light fw-bold">
                                     <a class="dropdown-item" href="/AllUsersPendingTasks">Users Pending Task</a>
                                     <a class="dropdown-item" href="AllUsersCompletedTasks">Users Completed Task</a>

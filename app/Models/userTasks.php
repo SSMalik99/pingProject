@@ -9,6 +9,8 @@ class userTasks extends Model
 {
     use HasFactory;
     protected $primaryKey = 'task_id';
+    
+    protected $guarded=[];
 
     /**
      * Get the user that owns the userTasks
